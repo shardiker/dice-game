@@ -1,0 +1,79 @@
+<html>
+<head>
+	<title>Task 2: My Dice Game</title>
+
+	<style>
+		.hidden {
+			display: none;
+		}
+	</style>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="startScreen">
+		<h1>My Dice Game</h1>
+		<p>
+			This is my game. You better like it ... please!
+		</p>
+		<h2>The Rules</h2>
+		<p>
+			<ul>
+				<li>Rule 1</li>
+				<li>Rule 2</li>
+				<li>Rule 3</li>
+			</ul>
+		</p>
+		<p>
+			<input id="newGameButton" type="button" value="Click here to Start!" />
+		</p>
+	</div>
+	
+	<!-- The Login Screen -->
+	<div id="loginScreen" class="hidden">
+		<h1>Player Login</h1>
+		<p>
+			We have <span id="loginPlayerCount">no</span> players.
+		</p>
+		<p>
+			<ul id="loggedInPlayers"></ul>
+		</p>
+		<p>
+			<input id="playerLogin" type="button" value="Login" />
+			<input id="startTheGame" type="button" value="Lets go!" class="hidden" />
+		</p>
+	</div>
+
+	<script type="text/javascript">
+		// Welcome screen
+		$("#newGameButton").click(
+			function (element) {
+				$("#startScreen").hide();
+				$("#loginScreen").show();
+			}
+		);
+
+		// Login Screen
+		$("#playerLogin").click(
+			function () {
+				$("#loggedInPlayers").append("<li>Player</li>");
+
+				let playerCount = $("#loggedInPlayers li").length;
+				$("#loginPlayerCount").text(playerCount);
+
+				if (playerCount == 2) {
+					$("#playerLogin").hide();
+					$("#startTheGame").show();
+				}
+			}
+		);
+
+		$("#startTheGame").click(
+			function () {
+				alert("Let's get started!!");
+			}
+		);		
+	</script>
+</body>
+</html>
+
