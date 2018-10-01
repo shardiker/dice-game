@@ -18,3 +18,6 @@ If players are tied after 5 routs, they each roll a die each to decide the winne
 * Players must be authenticated
 * User input must be validated
 
+## Demo
+
+Use [https://rawgit.com/shardiker/dice-game/master/src/dice-game.html](rawgit.com) to see the game, or go straight to https://rawgit.com/shardiker/dice-game/master/src/dice-game.html
